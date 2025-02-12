@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор группы</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="group-container">
+    <h1 id="group-title">Выберите вашу группу</h1>
+    <div id="group-buttons" class="group-buttons"></div>
+    <!-- Форма для выбора дней недели -->
+    <div id="days-container" class="days-container" style="display: none;">
+      <h2>Выберите дни недели</h2>
+      <form id="days-form">
+        <label><input type="checkbox" name="days" value="monday"> Понедельник</label><br>
+        <label><input type="checkbox" name="days" value="tuesday"> Вторник</label><br>
+        <label><input type="checkbox" name="days" value="wednesday"> Среда</label><br>
+        <label><input type="checkbox" name="days" value="thursday"> Четверг</label><br>
+        <label><input type="checkbox" name="days" value="friday"> Пятница</label><br>
+        <label><input type="checkbox" name="days" value="saturday"> Суббота</label><br>
+      </form>
+      <button class="confirm-btn" onclick="confirmDays()">Подтвердить выбор</button>
+    </div>
+    <!-- Кнопка назад -->
+    <button class="back-btn" onclick="goBack()">Назад</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url('https://wallpaper.forfun.com/fetch/83/8307fb295cfdf4b05a45ac4b2145b85e.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    z-index: -1; /* отправляем под контент */
+}
+
+button {
+    font-size: 1em; /* Уменьшаем общий размер шрифта */
+    padding: 10px 20px; /* Снижаем отступы */
+    max-width: 300px; /* Убираем слишком широкие кнопки */
+    margin: 10px auto; /* Центрируем */
+}
+
+
+.moon h1 {
+    font-size: 3em;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.main-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.main-container h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    
+}
+
+.course-buttons {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Кнопки будут заполнять экран по колонкам */
+    gap: 20px; /* Расстояние между кнопками */
+    width: 100%;
+    padding: 20px;
+    
+}
+
+.course-btn {
+    padding: 20px 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;    
+    cursor: pointer;
+    margin: 10px;
+    font-size: 2em;
+    transition: transform 0.3s ease;
+    width: 100%; /* Кнопки по ширине контейнера */
+    max-width: 100%; /* Максимальная ширина 100% */
+}
+
+.course-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 767px) {
+    body {
+        padding: 20px;
+        background-image: url('https://i.pinimg.com/736x/65/7c/88/657c88bd4894e0893a8c7b9cd7e708db.jpg'); 
+    }
+
+    .moon h1 {
+        font-size: 2em;
+    }
+
+    .main-container h2 {
+        font-size: 2em;
+        
+    }
+
+    .course-btn {
+        font-size: 1.2em;
+        padding: 18px;
+        width: 100%;
+        max-width: 250px;
+        margin-right: 43px;
+    }
+
+    .course-buttons {
+        grid-template-columns: 1fr; /* Все кнопки в одном столбце на мобильных */
+        display: flex; /* Используем flexbox */
+        flex-direction: column; /* Кнопки в колонку */
+        align-items: center;
+    }
+}
+
+/* Адаптивность для планшетов и средних экранов */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding: 30px;
+    }
+
+    .moon h1 {
+        font-size: 2.5em;
+    }
+
+    .main-container h2 {
+        font-size: 2.2em;
+    }
+
+    .course-btn {
+        font-size: 1.3em;
+        padding: 18px;
+        width: 90%;
+    }
+
+    .course-buttons {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки для планшетов */
+    }
+}
+
+/* Адаптивность для ПК */
+@media (min-width: 1025px) {
+    .course-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Кнопки в виде сетки по ширине экрана */
+        gap: 20px;
+    }
+
+    .course-btn {
+        font-size: 1.5em;
+        padding: 20px 40px;
+        width: 100%; /* Кнопки занимают 100% ширины контейнера */
+        max-width: 500px; /* Ограничиваем максимальную ширину кнопок */
+    }
+    
+}
+
+button {
+    padding: 20px 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 15px;
+    transition: transform 0.3s ease;
+    font-size: 1.5em;
+    width: 90%;
+    max-width: 400px;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Кнопки для выбора группы */
+.group-btn {
+    margin: 15px;
+    padding: 20px 40px;
+    background-color: #009688;
+    font-size: 1.5em;
+    width: 90%;
+    max-width: 400px;
+}
+
+.group-btn:hover {
+    background-color: #00796b;
+}
+
+/* Контейнеры дней и уроков */
+.day {
+    margin-bottom: 20px;
+}
+
+.subject {
+    color: #dedede;
+    font-size: 4em;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #081113bb;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    padding: 10px 10px;
+    margin: 0 auto;
+}
+
+.teacher-room {
+    font-size: 1.em;
+    color: #ffffff;
+}
+
+/* Кнопка "Назад" */
+.back-btn {
+    padding: 20px 40px;
+    background-color: #35a53e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+    width: 90%;
+    max-width: 300px;
+}
+
+.back-btn:hover {
+    background-color: hsla(127, 100%, 50%, 0.385);
+    transform: scale(1.05);
+}
+
+/* Адаптивность для разных экранов */
+
+/* Для маленьких экранов (мобильные устройства) */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    button, .group-btn, .back-btn {
+        font-size: 1.2em;
+        padding: 25px 20px;
+        width: 100%;
+        margin-top: 1px;
+        border-radius: 20px;
+        
+    }
+    .back-btn{
+        display: block;
+    margin: 20px auto; /* Автоматическое центрирование */
+    text-align: center;
+    }
+
+    .group-buttons, .course-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        
+    }
+
+    .subject {
+        font-size: 0.9em;
+    }
+}
+
+/* Для планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+    button, .group-btn, .back-btn {
+        font-size: 1.3em;
+        padding: 15px 30px;
+    }
+
+    .group-buttons, .course-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Для ноутбуков и больших экранов (ПК) */
+@media (min-width: 1025px) {
+    .course-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /*  Создаем сетку */
+        gap: 20px;
+    }
+
+    button, .group-btn, .back-btn {
+        font-size: 2em;
+        padding: 55px 50px;
+        width: 90%; /* Кнопки занимают 100% ширины контейнера */
+        max-width: 280px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    #schedule {
+        display: flex; /* Включаем Flexbox */
+        flex-direction: row; /* Элементы будут располагаться по горизонтали */
+        justify-content: space-between; /* Равномерно распределяет элементы по горизонтали */
+        flex-wrap: wrap; /* Дни могут переноситься на следующую строку, если они не помещаются в одну */
+        gap: 20px; /* Устанавливает небольшой промежуток между блоками */
+      }
+      
+      .day {
+        width: 400px; /* Уменьшаем ширину блока для каждого дня */
+        padding: 25px; /* Уменьшаем внутренние отступы */
+        border: 1px solid #ccc; /* Просто для визуализации */
+        border-radius: 20px;
+        background-color: #000000;
+        font-size: 4px; /* Уменьшаем размер шрифта */
+      }
+      h3{
+        font-size: 5em;
+      }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #eee9e9;
+  }
+  
+  .admin-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #eee6e6;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  select, input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #45a049;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .subject-input, .teacher-input, .room-input {
+    flex: 1;
+  }
+  
+
+  
+
+/* Отменяем маркеры в списке */
+ul {
+    list-style: none;
+  }
+  
+  /* Контейнер для иконок */
+  .example-2 {
+    position: fixed; /* Фиксируем контейнер внизу */
+    bottom: 20px; /* Располагаем на 20px от нижнего края */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Применяем корректировку, чтобы элементы были точно по центру */
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    align-items: center; /* Центрируем элементы по вертикали */
+    gap: 15px; /* Расстояние между иконками */
+  }
+  
+  /* Стиль для каждого элемента (иконки) */
+  .example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+  }
+  
+  /* Стиль всплывающей подсказки (tooltip) */
+  .example-2 .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Когда элемент ховерится, показываем подсказку */
+  .example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+  }
+  
+  /* Стиль для ссылки внутри элемента */
+  .example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: #000000;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Стиль при наведении на ссылку (иконка) */
+  .example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+  }
+  
+  /* Стиль для иконки внутри ссылки */
+  .example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* Цвет текста на иконке при наведении */
+  .example-2 .icon-content a:hover {
+    color: white;
+  }
+  
+  /* Стиль для заполненного фона (подсветка) */
+  .example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Заполнение фона при наведении */
+  .example-2 .icon-content a:hover .filled {
+    height: 100%;
+  }
+  
+  /* Разные цвета фона для соцсетей */
+  .example-2 .icon-content a[data-social="whatsapp"] .filled,
+  .example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+    background-color: #128c7e;
+  }
+  
+  .example-2 .icon-content a[data-social="facebook"] .filled,
+  .example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+    background-color: #3b5998;
+  }
+  
+  .example-2 .icon-content a[data-social="instagram"] .filled,
+  .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f
+    );
+  }
+  
+  .example-2 .icon-content a[data-social="youtube"] .filled,
+  .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000;
+  }
+  
+  /* Медиазапрос для экранов ПК (ширина экрана больше 768px) */
+  @media screen and (min-width: 768px) {
+    .example-2 {
+        position: fixed;
+        bottom: -10px;
+        left: 48%; /* Понижаем отступ с левого края */
+        transform: translateX(-50%); /* Центрирование */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    .example-2 .icon-content a {
+      width: 50px; /* Увеличиваем размер иконок на ПК */
+      height: 50px;
+    }
+  }
+  
+  /* Медиазапрос для экранов мобильных устройств (ширина экрана меньше или равна 768px) */
+  @media screen and (max-width: 768px) {
+        .example-2 {
+            position: fixed;
+            bottom: 5px;
+            left: 43%; /* Понижаем отступ с левого края */
+            transform: translateX(-50%); /* Центрирование */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+          }
+          
+    }
+  
+    .example-2 .icon-content a {
+      width: 60px; /* Уменьшаем размер иконок на мобильных */
+      height: 60px;
+    }
+  
+  
